@@ -92,7 +92,7 @@ To run the project locally (using the DEV API keys):
 
 - Make sure the callback url for your DEV Forge API Keys is set to <b>http://localhost:3000/api/forge/callback/oauth</b>.
 
-![forge-dev](resources/img/forge-dev.png)
+![forge_app_settings_dev](7 - viewer+extension+server+data-mng+derivatives/resources/img/forge_app_settings_dev.png)
 
 Run the following commands (mind the DEV!):
 
@@ -103,6 +103,8 @@ Run the following commands (mind the DEV!):
     > npm run dev
 
 To run in production, the callback url defined for your Forge App needs to match the host url, so, for example, if you run your app from <b>https://mydomain.com</b>:
+
+![forge_app_settings_prod](7 - viewer+extension+server+data-mng+derivatives/resources/img/forge_app_settings_prod.png)
 
     > npm install
     > set HOST_URL=https://mydomain.com
@@ -116,18 +118,27 @@ To deploy this project to Heroku, click on the button below at the Heroku Create
 - Specify the HOST_URL env variable based on the name of your Heroku App, e.g., `MyApp` would map to `HOST_URL=https://MyApp.herokuapp.com`.
 - Your Forge App callback must be set to <b>https://MyApp.herokuapp.com/api/forge/callback/oauth</b>.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jeremytammik/roomedit3dv3j)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-boilers.nodejs/tree/roomedit3d)
 
-The result will look like this, displaying a treeview of your Autodesk Cloud storage that lets you upload designs and perform actions from the context menu:
+The result will look like this, displaying a treeview of your Autodesk Cloud storage that lets you upload designs, perform actions from the context menu, start the roomedit3d viewer extension, select and translate model elements:
 
-![Project6](resources/img/Project6.png)
+![roomedit3dv3_running](7 - viewer+extension+server+data-mng+derivatives/resources/img/roomedit3dv3_running.png)
 
-To load a design in the viewer:
+To load and edit a design in the viewer and see the modifications applied in real-time to the Revit BIM:
 
+- Install the [Roomedit3dApp](https://github.com/jeremytammik/Roomedit3dApp) Revit add-in and ensure it is running.
+- Load a model that you have stored in A360 in in Revit.
 - Right-click the nodes to get options from the context menu.
-- Upload a design file to a folder (supports file selection dialog or drag & drop).
-- Upon successful upload, the file appears under the parent node in the tree, right-click and select <b>Generate viewable</b>.
+- If not already done:
+    - Upload a design file to a folder (supports file selection dialog or drag & drop).
+    - Upon successful upload, the file appears under the parent node in the tree; right-click it and select <b>Generate viewable</b>.
 - Upon successful translation of the design, double-click the file to load it into the viewer.
+- Click `Start` to load the roomedit3d viewer extension. Its icon appears with a pull-up menu.
+- In Revit, launch the Roomedit3dApp command to subscribe to `transform` notifications.
+- Select the transform pull-up icon to start the translate tool.
+- Select an element and move it on the screen.
+
+The element position will be updated accordingly in the BIM.
 
 
 
