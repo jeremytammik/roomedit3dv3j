@@ -92,7 +92,7 @@ To run the project locally (using the DEV API keys):
 
 - Make sure the callback url for your DEV Forge API Keys is set to <b>http://localhost:3000/api/forge/callback/oauth</b>.
 
-![forge_app_settings_dev](7 - viewer+extension+server+data-mng+derivatives/resources/img/forge_app_settings_dev.png)
+![forge_app_settings_dev](resources/img/forge_app_settings_dev.png)
 
 Run the following commands (mind the DEV!):
 
@@ -104,7 +104,7 @@ Run the following commands (mind the DEV!):
 
 To run in production, the callback url defined for your Forge App needs to match the host url, so, for example, if you run your app from <b>https://mydomain.com</b>:
 
-![forge_app_settings_prod](7 - viewer+extension+server+data-mng+derivatives/resources/img/forge_app_settings_prod.png)
+![forge_app_settings_prod](resources/img/forge_app_settings_prod.png)
 
     > npm install
     > set HOST_URL=https://mydomain.com
@@ -122,7 +122,7 @@ To deploy this project to Heroku, click on the button below at the Heroku Create
 
 The result will look like this, displaying a treeview of your Autodesk Cloud storage that lets you upload designs, perform actions from the context menu, start the roomedit3d viewer extension, select and translate model elements:
 
-![roomedit3dv3_running](7 - viewer+extension+server+data-mng+derivatives/resources/img/roomedit3dv3_running.png)
+![roomedit3dv3_running](resources/img/roomedit3dv3_running.png)
 
 To load and edit a design in the viewer and see the modifications applied in real-time to the Revit BIM:
 
